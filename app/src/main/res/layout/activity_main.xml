@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.imgod.gaokang.testdatabinding.customclass.EventClick" />
+
+        <import type="com.imgod.gaokang.testdatabinding.MainActivity" />
+
+        <import type="java.util.HashMap" />
+
+        <import type="java.util.ArrayList" />
+
+        <variable
+            name="person"
+            type="com.imgod.gaokang.testdatabinding.model.Person"></variable>
+
+        <variable
+            name="str"
+            type="String" />
+
+        <variable
+            name="testbool"
+            type="boolean" />
+
+        <variable
+            name="num"
+            type="int" />
+
+        <variable
+            name="list"
+            type="ArrayList&lt;String>" />
+
+        <variable
+            name="listKey"
+            type="int" />
+
+        <variable
+            name="hashmap"
+            type="HashMap&lt;String,String>" />
+
+        <variable
+            name="mapkey"
+            type="String" />
+
+        <variable
+            name="eventclick"
+            type="EventClick" />
+        <variable
+            name="activityclick"
+            type="MainActivity"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="#fff000"
+            android:gravity="center"
+            android:onClick="@{eventclick.handleClick}"
+            android:text="@{person.name}"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="#6666ff"
+            android:gravity="center"
+            android:onClick="@{activityclick.testClick}"
+            android:text="@{person.sex}"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(person.age)}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{str}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(testbool)}" />
+
+        <!--奇怪，这里竟然不能用汉字，只能用英语，中了邪了-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{testbool ? "test bool true":"test bool false"}' />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(num)}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{list[listKey]}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{hashmap[mapkey]}" />
+    </LinearLayout>
+</layout>
+
